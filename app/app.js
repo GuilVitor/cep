@@ -20,8 +20,11 @@
      cep.addEventListener("blur", (e) => {
        let search = cep.value.replace("-", "");
        console.log(search);
+
+       const url = `https://viacep.com.br/ws/${search}/json/`
+
      
-     fetch(`https://viacep.com.br/ws/${search}/json/`, options)
+     fetch(url, options)
          .then((response) => {
            response.json().then((data) => {
              console.log(data);
